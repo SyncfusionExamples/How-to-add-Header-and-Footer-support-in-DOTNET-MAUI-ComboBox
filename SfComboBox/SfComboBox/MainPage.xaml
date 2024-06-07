@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:editors="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+             xmlns:local="clr-namespace:SfComboBox"
+             x:Class="SfComboBox.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:SocialMediaViewModel />
+    </ContentPage.BindingContext>  
+   
+
+    <StackLayout  Padding="30" >
+        <editors:SfComboBox HeightRequest="40" 
+                            WidthRequest="300"
+                            IsEditable="True"
+                            MaxDropDownHeight="200" 
+                            ItemsSource="{Binding SocialMedias}" 
+                            ShowDropdownHeaderView="True" 
+                            DisplayMemberPath="Name"
+                            DropdownHeaderViewHeight="50"
+                            Margin="50">
+            <editors:SfComboBox.DropdownHeaderView>
+                <StackLayout BackgroundColor="#f0f0f0" >
+                    <Label  FontSize="20" Text="Header View" TextColor="Red" />
+                </StackLayout>
+            </editors:SfComboBox.DropdownHeaderView>
+        </editors:SfComboBox>
+
+        <editors:SfComboBox HeightRequest="40" 
+                     WidthRequest="300" 
+                     IsEditable="True"
+                     MaxDropDownHeight="200" 
+                     ItemsSource="{Binding SocialMedias}" 
+                     ShowDropdownFooterView="True" 
+                     DisplayMemberPath="Name"
+                     DropdownFooterViewHeight="50">
+            <editors:SfComboBox.DropdownFooterView>
+                <StackLayout BackgroundColor="#f0f0f0" >
+                    <Label  FontSize="20" Text="Footer View" TextColor="Red" />
+                </StackLayout>
+            </editors:SfComboBox.DropdownFooterView>
+        </editors:SfComboBox>
+    </StackLayout>
+
+</ContentPage>
